@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Circle Object With Border Gradient</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!--
+                contoh 1: 
+                👌 Border kelilingi content dengan sedikit ruang di antaranya
+
+                pros:
+                - Support Border Radius
+
+                conts: 
+                - Only support solid color
+            -->
+            <h1 class="text-light center">Border Radius Solid</h1>
+            <div id="example-1">
+                <div class="basic-border border-radius-100 p-1 max-width-250">
+                    <img src="https://i.pravatar.cc/250" width="250" height="250" class="border-radius-100">
+                </div>
+            </div>
+            <!--
+                contoh 2: 
+                👌 Border kelilingi content dengan sedikit ruang di antaranya
+
+                pros:
+                - Support Border Radius
+                - Support Gradient with linear-gradient() value
+
+                conts: 
+                - must use absolute unit
+            -->
+            <h1 class="background-image-gradient transparent-color center">Border Radius Gradient</h1>
+            <div id="example-2">
+                <div class="gradient-border border-radius-100 p-1">
+                    <img src="https://i.pravatar.cc/250" width="250" height="250" class="border-radius-100 p-1">
+                </div>
+            </div>
+            <!--
+                contoh 2: 
+                👌 Border kelilingi content dengan sedikit ruang di antaranya
+
+                pros:
+                - Easy to Create
+                - Support Gradient with border-image-source and border-image-slice property
+
+                conts: 
+                - Not support Border Radius
+            -->
+            <h1 class="background-image-gradient transparent-color center">Border Radius Gradient</h1>
+            <div id="example-3">
+                <div class="basic-gradient-border">
+                    <img src="https://i.pravatar.cc/250" width="250" height="250" class="p-1">
+                </div>
+            </div>
+        </div>
+        <style>
+            body,
+            img { 
+                background-color: rgb(26, 25, 25) ;
+            }
+
+            .wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* height: 100vh;  */
+                height: auto;
+                flex-direction: column;
+            }
+
+            /* FEATURES */
+            .basic-gradient-border {
+                /* one-line declaration / border property shorthand */
+                border-style: solid;
+                border-width: 1rem;
+                border-image-source: linear-gradient(to right, red, purple); 
+                border-image-slice: 1;
+            }
+
+            .basic-border {
+                border: .87rem solid white;
+            }
+            
+            .gradient-border {
+                background: linear-gradient(to right, red, purple);
+            }
+            
+            /* UTILITIES */
+            .background-image-gradient {
+                background-image: linear-gradient(to right, red, purple);
+                background-clip: text;
+                -webkit-background-clip: text;
+
+            }
+            .transparent-color {
+                color: transparent;
+            }
+
+            .text-light {
+                color: white;
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            .border-radius-100 {
+                border-radius: 100%;
+            }
+
+            .max-width-250 {
+                max-width: 250px;
+            }
+
+            .p-1 {
+                padding: 1rem;
+            }
+
+            .p-2 {
+                padding: 2rem;
+            }
+        </style>
+    </body>
+</html>
